@@ -4,21 +4,33 @@
   box-sizing: border-box;
 }
 
+/* ROOT */
+
+:root {
+  --ff: 'Roboto Slab', 'Roboto', serif;
+  --fs: 1rem;
+  --fs-14: 0.875rem;
+  --white: #fff;
+  --bg-tag: rgb(255, 119, 0);
+  --lh: 1.4;
+  --mg-0: 0;
+}
+
 html {
   height: 100svh;
   height: 100vh;
 }
 
 body {
-  margin: 0;
   display: flex;
   justify-content: center;
   align-items: center;
-  font-family: 'Roboto Slab', 'Roboto', serif;
   height: inherit;
-  background-color: #fff;
-  font-size: 1rem;
-  line-height: 1.4;
+
+  margin: var(--mg-0);
+  font-family: var(--ff);
+  font-size: var(--fs);
+  line-height: var(--lh);
 }
 
 img {
@@ -27,12 +39,11 @@ img {
 }
 
 a {
-  color: #000;
   text-decoration: none;
 }
 
 figure {
-  margin: 0;
+  margin: var(--mg-0);
   position: relative;
 }
 
@@ -42,7 +53,7 @@ figcaption {
   color: hsl(0, 0%, 100%, 0.15);
   text-align: center;
   width: 100%;
-  font-size: 0.875rem;
+  font-size: var(--fs-14);
 }
 
 h1,
@@ -56,23 +67,22 @@ h1 {
 
 h2 {
   font-size: 1.0625rem;
-  margin: 0;
+  margin: var(--mg-0);
 }
 
 
 .card {
-  width: 22.5%;
-  min-width: 285px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
   border-radius: 5px;
   border: 1.5px solid #154360;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 290px;
 }
 
-.card:hover {
+/* .card:hover {
   border-radius: 0px 0px 5px 5px;
-}
+} */
 
 
 .card__figure {
@@ -85,10 +95,10 @@ h2 {
 }
 
 .card__img--border {
+  border-radius: 5px 4px 0 0;
+  object-fit: cover;
   transform: scale(1);
   transition: transform 0.5s ease-in-out;
-  object-fit: cover;
-  border-radius: 5px 4px 0 0;
 }
 
 .card:hover .card__img--border {
@@ -112,55 +122,54 @@ h2 {
 
 
 .card__text {
-  background-color: #FFF;
+  background-color: var(--white);
   padding: 1.75em;
+  padding-bottom: 1.5em;
 }
 
 .tag {
-  text-transform: uppercase;
+  background-color: var(--bg-tag);
+  border-radius: 100px;
+  color: var(--white);
+  font-size: var(--fs-14);
   font-weight: 300;
   padding: 0.125em 1em;
-  background-color: rgb(255, 119, 0);
-  color: #FFF;
-  text-decoration: none;
-  border-radius: 100px;
-  font-size: 0.875rem;
+  text-transform: uppercase;
 }
 
 .tag:hover,
 .tag:focus {
-  opacity: 0.7;
+  opacity: 0.75;
   font-weight: 400;
 }
 
-.card__text h1 {
-  margin-bottom: 0;
-  font-weight: bold;
+.card__text h1,
+.card__text p {
+  margin-bottom: var(--mg-0);
 }
 
 .card__text p {
-  margin-top: 8px;
-  margin-bottom: 0px;
+  margin-top: 10px;
 }
 
 
 .card__author {
   display: flex;
-  justify-content: flex-start;
   align-items: center;
-  gap: 0.75em;
-  padding: 0.75em 1.75em;
-  background-color: #F5E7DA;
+  justify-content: flex-start;
+
   border-radius: 0 0 5px 5px;
+  gap: 0.5em;
+  padding: 0.25em 1.75em 1.5em;
 }
 
 .card__author--image {
-  width: 50px;
+  width: 45px;
 }
 
 .card__author--info  h2,
 .card__author--info p {
-  margin: 0;
+  margin: var(--mg-0);
 }
 
 
